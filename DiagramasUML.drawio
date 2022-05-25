@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="zNFyZ4YqmQJ5ln-JkC30" name="Page-1">
-        <mxGraphModel dx="1401" dy="1437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1288" dy="1459" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -17,15 +17,15 @@
                     <mxGeometry y="178" width="220" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="Board" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="1007" width="180" height="180" as="geometry"/>
+                    <mxGeometry x="1040" width="180" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="+Positions: int[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
+                <mxCell id="11" value="+Positions: char[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
                     <mxGeometry y="26" width="180" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="10" vertex="1">
                     <mxGeometry y="70" width="180" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="+AddBoat(Boat): void&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
+                <mxCell id="13" value="+AddBoat(): Boat&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="10" vertex="1">
                     <mxGeometry y="78" width="180" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="14" value="Boat" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
@@ -41,7 +41,7 @@
                     <mxGeometry y="68" width="300" height="52" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="Game" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="-110" y="190" width="350" height="160" as="geometry"/>
+                    <mxGeometry x="-110" y="190" width="350" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="19" value="+PlayersBoards: Dicctionary(User, (tuple(Board,Board))&#10;+GameStatus: Status&#10;+Turn: User&#10;+TurnStart: Date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
                     <mxGeometry y="26" width="350" height="64" as="geometry"/>
@@ -49,8 +49,8 @@
                 <mxCell id="20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="18" vertex="1">
                     <mxGeometry y="90" width="350" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="-StartTimer(): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-                    <mxGeometry y="98" width="350" height="62" as="geometry"/>
+                <mxCell id="21" value="+AddUserWithBoards(User, (Board, Board)): void&#10;+RemoveUserWithBoards(User, (Board, Board)): void&#10;-StartTimer(): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+                    <mxGeometry y="98" width="350" height="92" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="GameStatus: IEnumerable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="380" y="680" width="240" height="98" as="geometry"/>
@@ -80,16 +80,16 @@
                     <mxGeometry y="26" width="160" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="UserContainer&lt;User&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="200" width="170" height="140" as="geometry"/>
+                    <mxGeometry x="200" width="240" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="39" value="+Elements: List&lt;User&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="38" vertex="1">
-                    <mxGeometry y="26" width="170" height="34" as="geometry"/>
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="38" vertex="1">
-                    <mxGeometry y="60" width="170" height="8" as="geometry"/>
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" value="+AddElement(User): void&#10;+RemoveElement(User): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="38" vertex="1">
-                    <mxGeometry y="68" width="170" height="72" as="geometry"/>
+                <mxCell id="41" value="+AddElement(string, string, string): User&#10;+RemoveElement(User): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="38" vertex="1">
+                    <mxGeometry y="68" width="240" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" value="BaseHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="-380" y="980" width="270" height="170" as="geometry"/>
@@ -104,7 +104,7 @@
                     <mxGeometry y="68" width="270" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="50" value="GameContainer&lt;Game&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="390" width="170" height="140" as="geometry"/>
+                    <mxGeometry x="460" width="170" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="+Elements: List&lt;Game&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="50" vertex="1">
                     <mxGeometry y="26" width="170" height="34" as="geometry"/>
@@ -112,13 +112,13 @@
                 <mxCell id="52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="50" vertex="1">
                     <mxGeometry y="60" width="170" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="53" value="+AddElement(Game): void&#10;+RemoveElementGame): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="50" vertex="1">
+                <mxCell id="53" value="+AddElement(): Game&#10;+RemoveElement(Game): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="50" vertex="1">
                     <mxGeometry y="68" width="170" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="54" value="StartGameHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="180" y="980" width="260" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="55" value="+Players: Dictionary&lt;GameMode, List&lt;User&gt;&gt;&#10;+State: IEnumerable StartGameState" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="54" vertex="1">
+                <mxCell id="55" value="+Players: Dictionary&lt;GameMode, List&lt;User&gt;&gt;&#10;+State: IEnumerable StartGameState&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="54" vertex="1">
                     <mxGeometry y="26" width="260" height="34" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="54" vertex="1">
@@ -164,13 +164,13 @@
                     <mxGeometry y="68" width="240" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="77" value="PlayerHandlerStatus: IEnumerable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="355" y="790" width="240" height="98" as="geometry"/>
+                    <mxGeometry x="355" y="790" width="240" height="128" as="geometry"/>
                 </mxCell>
-                <mxCell id="78" value="TUTORIAL&#10;CHALLENGE&#10;GAME&#10;STATS" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="77" vertex="1">
-                    <mxGeometry y="26" width="240" height="64" as="geometry"/>
+                <mxCell id="78" value="TUTORIAL&#10;CHALLENGE&#10;STARTGAME&#10;GAME&#10;STATS&#10;FRIENDS" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="77" vertex="1">
+                    <mxGeometry y="26" width="240" height="94" as="geometry"/>
                 </mxCell>
                 <mxCell id="79" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="77" vertex="1">
-                    <mxGeometry y="90" width="240" height="8" as="geometry"/>
+                    <mxGeometry y="120" width="240" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="GameHandler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="990" y="980" width="250" height="170" as="geometry"/>
@@ -223,37 +223,37 @@
                 <mxCell id="93" value="SmallBoard" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
                     <mxGeometry x="827" y="200" width="180" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="94" value="+Positions: int[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="93">
+                <mxCell id="94" value="+Positions: char[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="93">
                     <mxGeometry y="26" width="180" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="95" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="93">
                     <mxGeometry y="70" width="180" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="+AddBoat(Boat): void&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="93">
+                <mxCell id="96" value="+AddBoat(): Boat&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="93">
                     <mxGeometry y="78" width="180" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="97" value="MediumBoard" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
                     <mxGeometry x="1040" y="200" width="180" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="98" value="+Positions: int[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="97">
+                <mxCell id="98" value="+Positions: char[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="97">
                     <mxGeometry y="26" width="180" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="99" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="97">
                     <mxGeometry y="70" width="180" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="+AddBoat(Boat): void&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="97">
+                <mxCell id="100" value="+AddBoat(): Boat&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="97">
                     <mxGeometry y="78" width="180" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="LargeBoard" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
                     <mxGeometry x="1250" y="200" width="180" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="102" value="+Positions: int[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="101">
+                <mxCell id="102" value="+Positions: char[ , ]&#10;+Boats: List(Boat)&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="101">
                     <mxGeometry y="26" width="180" height="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="103" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="101">
                     <mxGeometry y="70" width="180" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="104" value="+AddBoat(Boat): void&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="101">
+                <mxCell id="104" value="+AddBoat(): Boat&#10;+RemoveBoat(Boat): void&#10;+GotHit(char, int): string&#10;+GetBoardToPrint(string): void&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="101">
                     <mxGeometry y="78" width="180" height="102" as="geometry"/>
                 </mxCell>
                 <mxCell id="106" value="AircraftCarrier" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
@@ -280,7 +280,7 @@
                 <mxCell id="113" value="+IsDestroyed(): bool&#10;+ConvertToJson(): string&#10;+LoadFromJson(string): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="110">
                     <mxGeometry y="68" width="300" height="52" as="geometry"/>
                 </mxCell>
-                <mxCell id="114" value="submarine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+                <mxCell id="114" value="Submarine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
                     <mxGeometry x="1510" y="-584" width="300" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="115" value="+Positions: Dicctionary(tuple(char, int), bool)&#10;+Destroyed: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="114">
