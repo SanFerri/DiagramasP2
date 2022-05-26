@@ -8,7 +8,7 @@ ademas de contener datos los usen y tengan la logica del programa.
 Uno de los temas que al principio nos complico era la idea de como podiamos conectar 
 a dos jugadores y si esto era necesario que estuviera en una clase en especifica o podria 
 estar dentro de una de las clases que ya sabiamos eran necesarias y precisariamos (especificamente game),
-decidimos localizarla aparta ya que la logica que pueda tener dentro de esta no esta relacionada 
+decidimos localizarla aparte ya que la logica que pueda tener dentro de esta no esta relacionada 
 directamente con las responsabilidades de game, a su vez gracias al documento (NOSE) 
 pudimos identificar que nuestro pensamiento era el correcto ya que en el texto se habla de 
 las lases coordinators que son especificas para tener la logica de coordinacion en un proyecto.
@@ -20,8 +20,8 @@ Una caracteristica que consideramos importante o al menos que resalta en nuestro
 equipo, es que todos somos alumnos que recursamos la materia, gracias a esto el descifrar 
 que clases deben hacer la logica de recibir los mensajes y a partir de ellos no solo 
 responder si no que provocar cambios como crear instancias o cambiar valores en clases, deben de
-ser los Handlers, cabe destacar que esta idea surgio a partir de la pagina Refactoring guru, que dedica una seccion
-a el funcionamiento y las ventajas del uso de Handlers.
+ser los Handlers, cabe destacar que esta idea surgio a partir de la pagina Refactoring guru, que dedica 
+una seccion al funcionamiento y las ventajas del uso de Handlers.
 
 Una implementacion e idea que nos parecia necesaria y correcta para el codigo, es que no 
 debe haber una espera indefinida en el turno de un usario, es decir, si es el turno de un
@@ -35,3 +35,24 @@ para el usuario1 AFK.
 Para hacer posible la funcionalidad explicada previamente tuvimos que buscar como funciona el
 concepto de Timer en C#, resulta ser que en C# existe una clase Timer a la que se pueda acceder
 mediante el espacio de nombres System.Timers.
+
+A la hora de asignar responsabilidades tuvimos encuenta los patrones y principios dados en clase,
+cuyo autor es Robert C. Martin, en su conocida teoria "Design Principles and Design Patterns".
+Los container, tanto UserContainer como GameContainer, guardan todas las instancias de User y Game
+respectivamente, segun el patron Creator esta es razon suficiente para darle la responsabilidad a
+dichos Container de crear las instancias de las clases que guardan.
+
+En los handlers tambien se puede destacar la existencia del principio OCP, que basicamente
+dicta que una clase debe ser cerrada a la modificacion y abierta a la extension. Esto 
+se ve en el atributo Next de cada handler, si en un futuro es necesario agregar nuevas funcionalidades
+a la hora de recibir mensajes, se puede simplemente agregar nuevos IHandler que hereden de Basehandler
+y no tener que modificar los Handlers que ya existen. A su vez la idea de depender de una abstraccion
+de un handler en vez del handler mismo encapsula mejor las clases, ya que un handler no conoce en verdad
+el funcionamiento del handler que guarda en el atributo Next.
+
+Uno de los patrones mas conocidos del libro de Robert es el patron Expert, este se puede hallar facilmente
+en todo el diagrama, por ejemplo si los container son aquellos que conocen la lista donde se guardan
+instancias de un elemento, tambien tienen la responsabilidad de agregar y remover elementos de la lista
+ya que son los expertos en la informacion respecto a ella. Otra funcionalidad que cumple con Expert es en
+user el GetHitPercentage y GetMissPercentage, ya que user conoce la cantidad total de misses y hits, es
+experto en la informacion necesaria para calcular los porcentajes de cada uno.
