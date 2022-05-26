@@ -1,5 +1,5 @@
-Al proponernos empezar a armar los diagramas UML primero nos había
-dispuesto a hallar las clases más básicas struct que son aquellas
+Al proponernos empezar a armar los diagramas UML primero nos habíamos
+dispuesto a hallar las clases más básicas information holder que son aquellas
 que más que tener parte de la lógica del programa prácticamente solo contienen
 información (Estas siendo User, UserContainer, GameContainer), ya que estas son las
 más fáciles de hallar, y que a partir de ellas podíamos empezar a ver otras clases que
@@ -7,16 +7,28 @@ además de contener datos los usen y tengan la lógica del programa, comprender 
 funcionar la lógica de un programa se hace más sencillo si tenemos las bases que contienen
 la información. 
 
+A su vez encontramos una clase que era necesaria para el programa, la clase Game. Esta la identficiamos
+como un structurer ya que mantiene las relaciones entre User y Boards, guardando informacion
+de su relacion, como por ejemplo saber si la primera Board es la del User o es una representacion
+de las tiradas al user rival.
+
 Uno de los temas que al principio nos complico era la idea de cómo podíamos conectar 
 a dos jugadores y si esto era necesario que estuviera en una clase en especifica o podría 
 estar dentro de una de las clases que ya sabíamos eran necesarias y precisaríamos (específicamente game),
 decidimos localizarla aparte ya que la lógica que pueda tener dentro de esta no está relacionada 
-directamente con las responsabilidades de game, a su vez gracias al documento (NOSE) 
-pudimos identificar que nuestro pensamiento era el correcto ya que en el texto se habla de 
-las lases coordinators que son específicas para tener la lógica de coordinación en un proyecto.
+directamente con las responsabilidades de game, a su vez gracias al documento "Object Design. 
+Responsabilities and Collaborations" pudimos identificar que nuestro pensamiento era el correcto ya que en el texto se habla de 
+las clases coordinators que son específicas para tener la lógica de coordinación en un proyecto.
 Así llegamos a crear la clase Organizer, que se encarga de unir a dos jugadores mediante 
 la creación de un game, para hacerlo nos fijamos en la lista de usuarios esperando y 
-dependiendo del gamemode que haya seleccionado.
+dependiendo del gamemode que haya seleccionado. Esta clase a partir del evento 
+StartGame de que ocasiona un User trata de unir a dos Users, al delegar a la clase Game o GameContainer
+la tarea de crear dicho game.
+
+Otro patron dado en clase que aplicamos a los Containers es Singleton, tanto de Container<T>, como en
+GameContainer y UserContainer se guarda una instancia privada de _instance, y un metodo estatico
+para obtener dicha instancia, de esta forma podemos asegurarnos que en verdad GameContainer y UserContainer
+funcionen con una unica instancia.
 
 Una característica que consideramos importante o que al menos resalta en nuestro 
 equipo, es que todos somos alumnos que recursamos la materia, gracias a esto el descifrar 
